@@ -1,0 +1,153 @@
+/* รีเซ็ตค่าพื้นฐานของ CSS เพื่อให้แน่ใจว่าไม่มีค่าพื้นฐานที่ทับซ้อนกัน */
+* {
+    margin: 0; /* ตั้งค่าระยะขอบให้เป็น 0 */
+    padding: 0; /* ตั้งค่าระยะภายในให้เป็น 0 */
+    box-sizing: border-box; /* ให้รวมขนาดของขอบและระยะภายในในการคำนวณขนาดขององค์ประกอบ */
+    font-family: 'Arial', sans-serif; /* ตั้งค่าแบบอักษรให้เป็น Arial */
+}
+
+/* ตั้งค่าbody */
+body {
+    background-color: #f4f4f4; /* สีพื้นหลัง */
+    color: #221f1f; /* สีข้อความ */
+    line-height: 1.6; /* ความสูงของบรรทัด */
+    min-height: 100vh; /* ทำให้ body มีความสูงอย่างน้อยเท่ากับ viewport */
+    flex-direction: column; /* จัดให้อยู่ในแนวตั้ง */
+    text-align: center
+}
+
+/* หัวข้อหลักเเละสีด้านบน */
+header {
+    background: #c820d7; /* สีพื้นหลังของ header */
+    color: #fff; /* สีข้อความของ header */
+    padding: 20px; /* ระยะห่างภายใน */
+    text-align: center; /* จัดกึ่งกลางข้อความ */
+}
+
+/* ตั้งค่ารายการคณะ */
+.faculty-list {
+    display: grid; /* ใช้ grid layout */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* กำหนดจำนวนคอลัมน์ให้ยืดหยุ่นตามขนาดหน้าจอ */
+    gap: 20px; /* ระยะห่างระหว่างไอเท็ม */
+    padding: 20px; /* ระยะห่างภายใน */
+    max-width: 1200px; /* ขนาดสูงสุด */
+    margin: auto; /* จัดกึ่งกลาง */
+}
+
+/* กล่องของคณะ */
+.faculty {
+    background: #ffffff; /* สีพื้นหลัง */
+    padding: 15px; /* ระยะห่างภายใน */
+    border-radius: 10px; /* มุมโค้ง */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* เงา */
+    text-align: center; /* จัดกึ่งกลางข้อความ */
+    transition: transform 0.3s ease; /* การเปลี่ยนแปลงขนาดเมื่อโฮเวอร์ */
+    display: flex; /* ใช้ flexbox สำหรับการจัดแนว */
+    flex-direction: column; /* จัดไอเท็มเป็นแนวตั้ง */
+    justify-content: space-between; /* เว้นระยะระหว่างไอเท็ม */
+    height: 350px; /* ความสูงของกล่อง */
+}
+
+/* เมื่อโฮเวอร์คณะจะขยาย */
+.faculty:hover {
+    transform: scale(1.05); /* ขยายขนาดกล่อง */
+}
+
+/* ตั้งค่าหัวข้อในกล่องคณะ */
+.faculty h2 {
+    height: 60px; /* ความสูงของหัวข้อ */
+    display: flex; /* ใช้ flexbox */
+    align-items: center; /* จัดกึ่งกลางในแนวตั้ง */
+    justify-content: center; /* จัดกึ่งกลางในแนวนอน */
+    text-align: center; /* จัดกึ่งกลางข้อความ */
+    font-size: 18px; /* ขนาดตัวอักษร */
+    font-weight: bold; /* ความหนาของตัวอักษร */
+    padding: 5px; /* ระยะห่างภายใน */
+}
+
+/* ตั้งค่าภาพภายในกล่องคณะ */
+.faculty img {
+    max-width: 100%; /* ให้ภาพเต็มความกว้าง */
+    height: 200px; /* ความสูงของภาพ */
+    object-fit: contain; /* ให้ภาพครอบคลุมโดยไม่เสียสัดส่วน */
+    border-radius: 10px; /* มุมโค้งของภาพ */
+    display: flex; /* ไม่ให้ขยับ */
+}
+
+/* ตั้งค่าปุ่ม */
+button {
+    background: #3085da; /* สีพื้นหลัง */
+    color: white; /* สีข้อความ */
+    padding: 10px 15px; /* ระยะห่างภายใน */
+    border: none; /* ไม่ให้มีเส้นขอบ */
+    border-radius: 5px; /* มุมโค้ง */
+    cursor: pointer; /* เปลี่ยน cursor เมื่อชี้ที่ปุ่ม */
+    transition: background 0.3s; /* เพิ่มการเปลี่ยนแปลงพื้นหลัง*/
+}
+
+/* เอาเม้าค้างที่ปุ่มปุ่มจะเปลี่ยนสี */
+button:hover {
+    background: #2565a6; /* สีพื้นหลังของปุมตอนเปลียน */
+}
+
+/* ตั้งค่าฟุตเตอร์ */
+footer {
+    background: #771490; /* สีพื้นหลัง */
+    color: white; /* สีข้อความ */
+    text-align: center; /* จัดกึ่งกลางข้อความ */
+    padding: 20px; /* ระยะห่างภายใน */
+    margin-top: auto; /* ระยะห่างด้านบน */
+    text-align: center;
+}
+
+/* การจัดวางเนื้อหาภายในฟุตเตอร์ */
+.footer-main {
+    display: flex; /* ใช้ flexbox */
+    justify-content: space-between; /* จัดให้ห่างกัน */
+    flex-wrap: wrap; /* ให้ไอเท็มสามารถย้ายแถวได้ */
+    max-width: 1200px; /* ขนาดสูงสุด */
+    margin: auto; /* จัดกึ่งกลาง */
+    padding: 20px; /* ระยะห่างภายใน */
+}
+
+/* เนื้อหาภายในฟุตเตอร์ */
+.footer-content {
+    display: flex; /* ใช้ flexbox */
+    justify-content: space-between; /* จัดไอเท็มให้ห่างกัน */
+    width: 100%; /* กำหนดความกว้างเต็ม */
+}
+
+/* จัดวางเนื้อหาภายในฟุตเตอร์ */
+.footer-left, .footer-middle, .footer-right {
+    flex: 1; /* ให้แต่ละส่วนมีขนาดเท่ากัน */
+    padding: 10px; /* ระยะห่างภายใน */
+    min-width: 250px; /* กำหนดขนาดขั้นต่ำ */
+}
+
+/* ตั้งค่าสไตล์ในฟุตเตอร์ */
+.footer-middle ul {
+    list-style: none; /* ลบจุดจากรายการ */
+}
+
+.footer-middle ul li a {
+    color: rgb(255, 255, 255); /* สีข้อความ */
+    text-decoration: none; /* ลบการขีดเส้นใต้ */
+    transition: 0.3s; /* การเปลี่ยนแปลงราบรื่น */
+}
+
+/* ลิงก์จะขีดเส้นใต้ */
+.footer-middle ul li a:hover {
+    text-decoration: underline; /* ขีดเส้นใต้ */
+}
+
+/* แสดงไอคอนโซเชียล */
+.social-icons img {
+    width: 40px;  /* ปรับขนาดตามต้องการ */
+    height: 40px; /* ทำให้เป็นสี่เหลี่ยมจัตุรัส */
+    border-radius: 50%; /* ทำให้เป็นวงกลม */
+    object-fit: cover; /* ป้องกันภาพผิดสัดส่วน */
+    flex-direction: column; /* จัดไอเท็มเป็นแนวตั้ง */
+    justify-content: space-between;
+    padding: 2px; /* ระยะห่างภายใน */
+    margin-top: 2px; /* ระยะห่างด้านบน */
+}

@@ -1,0 +1,188 @@
+/* รีเซ็ตค่าเริ่มต้นของเบราว์เซอร์ */
+* {
+    margin: 0; /* ลบระยะขอบทั้งหมดของ elements */
+    padding: 0; /* ลบ padding เพื่อความสม่ำเสมอ */
+    box-sizing: border-box; /* กำหนดให้ขนาดรวม padding และ border */
+    font-family: Arial, sans-serif; /* ตั้งค่าฟอนต์เริ่มต้น */
+}
+
+/* ตั้งค่าพื้นหลังและการจัดวางโครงสร้าง */
+body {
+    display: flex; /* ใช้ flexbox จัด layout */
+    flex-direction: column; /* จัดให้อยู่ในแนวตั้ง */
+    min-height: 100vh; /* ทำให้ body มีความสูงอย่างน้อยเท่ากับ viewport */
+    background-color: #f4f4f4; /* สีพื้นหลังอ่อน */
+    background-image: url(https://www.up.ac.th/images_news/Thumb/%E0%B8%AB%E0%B8%AD%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%8A%E0%B8%B8%E0%B8%A1%E0%B8%9E%E0%B8%8D%E0%B8%B2%E0%B8%87%E0%B8%B3%E0%B9%80%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B8%87_638544951942604029.jpg);
+    backdrop-filter: blur(5px);
+    text-align: center;
+    background-size: cover;
+    
+}
+
+/* จัดการ header */
+header {
+    background: #ffffff; /* สีพื้นหลังของ header */
+    padding: 20px;
+    text-align: center; /* จัดให้อยู่กึ่งกลาง */
+}
+
+header img {
+    width: 120px; /* กำหนดขนาดของโลโก้ */
+}
+
+/* จัดสไตล์เมนูนำทาง */
+nav {
+    background: #c820d7; /* กำหนดสีพื้นหลังของเมนู */
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 18px;
+}
+
+nav a:hover {
+    background: #771490; /* เปลี่ยนสีพื้นหลังเมื่อ hover */
+    border-radius: 5px;
+}
+
+/* สไตล์ section หลัก */
+section {
+    flex: 1; /* ทำให้เนื้อหาด้านบนขยายตัวเมื่อมีพื้นที่เหลือ */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.Detail {  
+    margin: 20px auto; /* จัดให้อยู่ตรงกลาง */
+    background: white; 
+    padding: 20px;  /* ขนาดทั้งหมดของ Block */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.faculty img {
+    width: 100%;
+    max-width: 800px;
+    border-radius: 10px; /* มุมโค้งมน */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* เพิ่มเงา */
+}
+
+/* สไตล์กล่องคณะ */
+.faculty1-list {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 20px;
+    width: 100%;
+    height: 500px;
+}
+
+.faculty1 {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* เพิ่มเงาเบา ๆ */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    align-items: center; /* จัดให้อยู่กึ่งกลางแนวนอน */
+}
+
+.faculty1 img {
+    width: 50%;
+    border-radius: 10px;
+    transform: scale(1.5);
+}
+
+.faculty1 button {
+    background: #0055a5;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-top: auto;
+    align-self: center;
+}
+
+.faculty1 .content {
+    flex-grow: 1; /* ทำให้เนื้อหาอื่นขยายตัวได้ */
+}
+
+.faculty1 button:hover {
+    background: #003366; /* เปลี่ยนสีเมื่อ hover */
+}
+
+/* ฟุตเตอร์ */
+footer {
+    padding: 20px; /* กำหนดระยะห่างขอบด้านบนและล่างของ Footer */
+    text-align: center; /* จัดวางข้อความให้อยู่กึ่งกลาง */
+    margin-top: auto; /* ทำให้ Footer อยู่ด้านล่างสุดของหน้าเว็บเสมอ */
+    background: #8312a0; /* สีพื้นหลัง */
+    color: white; /* สีข้อความ */
+    text-align: center; /* จัดกึ่งกลางข้อความ */
+}
+
+.footer-main {
+    display: flex; /* ใช้ flexbox */
+    justify-content: space-between; /* จัดให้ห่างกัน */
+    flex-wrap: wrap; /* ให้ไอเท็มสามารถย้ายแถวได้ */
+    max-width: 1200px; /* ขนาดสูงสุด */
+    margin: auto; /* จัดกึ่งกลาง */
+    padding: 20px; /* ระยะห่างภายใน */
+}
+
+.footer-content {
+    display: flex; /* ใช้ Flexbox จัดเรียงเนื้อหา */
+    justify-content: space-between; /* กระจายเนื้อหาให้มีระยะห่างเท่ากัน */
+    width: 100%; /* ใช้พื้นที่เต็มความกว้างของ Footer */
+    flex-wrap: wrap; /* ให้ปรับขนาดอัตโนมัติเมื่อหน้าจอแคบลง */
+}
+
+.footer-left, .footer-middle, .footer-right {
+    width: 30%; /* กำหนดให้แต่ละส่วนใช้พื้นที่ประมาณ 30% ของ Footer */
+    min-width: 250px; /* กำหนดขนาดขั้นต่ำเพื่อให้คงรูปแบบอยู่เมื่อหน้าจอเล็กลง */
+}
+
+.footer-middle ul {
+    list-style: none; /* ลบสัญลักษณ์จุดหน้ารายการ */
+    padding: 0; /* กำหนดให้ไม่มีระยะห่างด้านในของ List */
+}
+
+.footer-middle ul li {
+    margin: 5px 0; /* กำหนดระยะห่างระหว่างรายการ */
+}
+
+.footer-middle ul li a {
+    color: white; /* กำหนดสีของลิงก์เป็นสีขาว */
+    text-decoration: none; /* ลบเส้นใต้ของลิงก์ */
+}
+
+.footer-middle ul li a:hover {
+    text-decoration: underline; /* เพิ่มเส้นใต้เมื่อโฮเวอร์ที่ลิงก์ */
+}
+
+/* แสดงไอคอนโซเชียล */
+.social-icons img {
+    width: 40px;  /* ปรับขนาดตามต้องการ */
+    height: 40px; /* ทำให้เป็นสี่เหลี่ยมจัตุรัส */
+    border-radius: 50%; /* ทำให้เป็นวงกลม */
+    object-fit: cover; /* ป้องกันภาพผิดสัดส่วน */
+    flex-direction: column; /* จัดไอเท็มเป็นแนวตั้ง */
+    justify-content: space-between;
+    padding: 2px; /* ระยะห่างภายใน */
+    margin-top: 2px; /* ระยะห่างด้านบน */
+
+}

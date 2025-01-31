@@ -1,0 +1,99 @@
+/* ตั้งค่าพื้นฐานให้กับเว็บ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+    word-wrap: break-word; /* ให้ตัดคำอัตโนมัติ */
+    overflow-wrap: break-word; /* ป้องกันคำยาวเกินกรอบ */
+}
+.nav-button {
+    position: absolute; /* กำหนดให้ตำแหน่งสัมพันธ์กับองค์ประกอบที่ใกล้ที่สุด */
+    top: 50px; /* ระยะห่างจากด้านบน */
+    right: 50px; /* ระยะห่างจากด้านขวา */
+    background-color: #24d400; /* สีปุ่ม */
+    color: white; /* สีตัวอักษร */
+    padding: 10px 20px; /* ระยะห่างด้านใน */
+    border-radius: 5px; /* มุมโค้ง */
+    text-decoration: none; /* ลบขีดเส้นใต้ */
+    font-size: 16px; /* ขนาดตัวอักษร */
+}
+
+.nav-button:hover {
+    background-color: #1ba000; /* เปลี่ยนสีเมื่อโฮเวอร์ */
+}
+
+/* ====== คอนเทนเนอร์หลัก ====== */
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+    overflow: visible; /* ไม่ซ่อนข้อความ */
+}
+
+/* Faculty Section */
+.faculty {
+    background: white; /* พื้นหลัง */
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 10 10 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    overflow: visible; /* ไม่ซ่อนข้อความ */
+    height: 600px; /*ความยาวของกรอบ */
+    
+}
+
+/* ปรับข้อความใน <h2> และ <p> ให้แสดงเต็ม */
+.faculty h2, .faculty p {
+    max-width: 100%; /* ให้ข้อความไม่เกินขอบ */
+    overflow: visible; /* แสดงข้อความทั้งหมด */
+    white-space: normal; /* อนุญาตให้ข้อความขึ้นบรรทัดใหม่ */
+}
+/* Header Section */
+header {
+    background-color: #c820d7;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 20px;
+    overflow: visible; /* ไม่ซ่อนข้อความ */
+}
+
+header h1, header p {
+    max-width: 100%;
+    overflow: visible; /* แสดงข้อความทั้งหมด */
+    white-space: normal; /* อนุญาตให้ข้อความขึ้นบรรทัดใหม่ */
+}
+
+/*  Footer */
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    overflow: visible; /* ไม่ซ่อนข้อความ */
+}
+
+.footer-middle ul li a {
+    white-space: normal; /* ให้ข้อความขึ้นบรรทัดใหม่ได้ */
+    overflow: visible; /* แสดงข้อความทั้งหมด */
+    max-width: 100%;
+}
+
+/* ปรับปุ่มเพื่อไม่ให้ข้อความหาย */
+.nav-button {
+    display: inline-block;
+    max-width: 100%;
+    white-space: normal; /* ให้ข้อความขึ้นบรรทัดใหม่ */
+    overflow: visible; /* แสดงข้อความทั้งหมด */
+}
+
+.container h4 {
+    background: white;
+    padding: 15px;
+    box-shadow: 10 10 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    overflow: visible; /* ไม่ซ่อนข้อความ */
+    /* height: 500px; */
+    max-width: 100%; /* ให้ข้อความไม่เกินขอบ */
+    overflow: visible; /* แสดงข้อความทั้งหมด */
+    white-space: normal; /* อนุญาตให้ข้อความขึ้นบรรทัดใหม่ */
+}

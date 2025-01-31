@@ -1,0 +1,26 @@
+nav {
+    position: absolute; /* ใช้ position absolute เพื่อวางตำแหน่ง */
+    top: 20px; /* ระยะห่างจากด้านบน */
+    right: 20px; /* ระยะห่างจากด้านขวา */
+    display: flex; /* ถ้ามีหลายปุ่ม จะจัดเรียงด้วย Flexbox */
+    gap: 10px; /* ระยะห่างระหว่างปุ่ม */
+}
+
+.nav-button {
+    display: inline-block;
+    padding: 10px 20px; /* เพิ่มขนาดปุ่ม */
+    font-size: 16px;
+    text-decoration: none;
+    background-color: #24d400; /* สีพื้นหลังปุ่ม */
+    color: #fff; /* สีข้อความ */
+    border: none;
+    border-radius: 5px; /* มุมโค้งมน */
+    cursor: pointer; /* เปลี่ยนเมาส์เป็นรูปมือ */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* เพิ่มเอฟเฟกต์ */
+}
+
+.nav-button:hover {
+    background-color: #1ba000; /* เปลี่ยนสีเมื่อวางเมาส์ */
+    transform: scale(1.05); /* ขยายขนาดเมื่อวางเมาส์ */
+}
+

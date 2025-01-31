@@ -1,0 +1,131 @@
+/* รีเซ็ตค่าเริ่มต้นของเบราว์เซอร์ */
+* {
+  margin: 0; /* ลบระยะขอบทั้งหมด */
+  padding: 0; /* ลบระยะห่างด้านในทั้งหมด */
+  box-sizing: border-box; /* คำนวณขนาดรวม padding และ border */
+  font-family: 'Poppins', sans-serif; /* กำหนดฟอนต์เริ่มต้น */
+}
+
+/* พื้นหลังของหน้าเว็บ */
+body {
+  display: flex; /* จัดให้อยู่กึ่งกลาง */
+  justify-content: center; /* จัดกึ่งกลางแนวนอน */
+  align-items: center; /* จัดกึ่งกลางแนวตั้ง */
+  min-height: 100vh; /* ให้ความสูงของหน้าต่างเว็บเต็มจอ */
+  background: url('https://www.up.ac.th/images_news/Thumb/%E0%B8%AB%E0%B8%AD%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%8A%E0%B8%B8%E0%B8%A1%E0%B8%9E%E0%B8%8D%E0%B8%B2%E0%B8%87%E0%B8%B3%E0%B9%80%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B8%87_638544951942604029.jpg') no-repeat center center/cover; /* ตั้งค่าภาพพื้นหลัง */
+}
+
+/* กรอบล็อกอิน */
+.login-box {
+  display: flex; /* ใช้ flexbox */
+  flex-direction: column; /* จัดเรียงเป็นแนวตั้ง */
+  justify-content: center; /* จัดให้อยู่ตรงกลาง */
+  align-items: center; /* จัดให้อยู่กึ่งกลาง */
+  width: 400px; /* กำหนดความกว้าง */
+  padding: 30px; /* เพิ่มพื้นที่ด้านใน */
+  background: rgba(32, 26, 26, 0.85); /* พื้นหลังโปร่งแสง */
+  border-radius: 15px; /* ทำให้ขอบมน */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* เพิ่มเงา */
+  text-align: center; /* จัดข้อความให้อยู่ตรงกลาง */
+}
+
+/* โลโก้ */
+.logo img {
+  width: 100px; /* กำหนดขนาดโลโก้ */
+  margin-bottom: 20px; /* เพิ่มระยะห่างด้านล่าง */
+}
+
+/* หัวข้อของล็อกอิน */
+.login-header {
+  font-size: 24px; /* กำหนดขนาดตัวอักษร */
+  color: #fff; /* กำหนดสีข้อความเป็นสีขาว */
+  font-weight: bold; /* ทำให้ตัวหนา */
+  margin-bottom: 20px; /* เพิ่มระยะห่างด้านล่าง */
+}
+
+/* ช่องกรอกชื่อผู้ใช้และรหัสผ่าน */
+.input-box {
+  width: 100%; /* ขยายเต็มความกว้างของกรอบล็อกอิน */
+  margin-bottom: 15px; /* เพิ่มระยะห่างด้านล่าง */
+}
+
+.input-box .input-field {
+  width: 100%; /* ขยายเต็มพื้นที่ */
+  height: 50px; /* กำหนดความสูง */
+  padding: 10px 20px; /* เพิ่มพื้นที่ด้านใน */
+  font-size: 16px; /* ขนาดตัวอักษร */
+  border: 2px solid #ddd; /* กำหนดขอบสีเทา */
+  border-radius: 25px; /* ทำให้ขอบมน */
+  outline: none; /* ลบเส้นขอบเมื่อคลิก */
+  transition: 0.3s; /* เพิ่มเอฟเฟกต์เวลาเปลี่ยนสถานะ */
+}
+
+/* เอฟเฟกต์เมื่อคลิกที่ช่องกรอกข้อมูล */
+.input-box .input-field:focus {
+  border-color: #17d4c3; /* เปลี่ยนสีเส้นขอบ */
+  box-shadow: 0 0 10px rgba(23, 212, 195, 0.5); /* เพิ่มเงา */
+}
+
+/* ตัวเลือก "จำรหัสผ่าน" และ "ลืมรหัสผ่าน" */
+.forgot {
+  display: flex; /* ใช้ flexbox */
+  justify-content: space-between; /* จัดให้อยู่คนละฝั่ง */
+  align-items: center; /* จัดให้อยู่กึ่งกลางแนวตั้ง */
+  width: 100%; /* ขยายเต็มกรอบล็อกอิน */
+  font-size: 14px; /* กำหนดขนาดตัวอักษร */
+  margin-bottom: 20px; /* เพิ่มระยะห่างด้านล่าง */
+  color: #ddd; /* สีข้อความ */
+}
+
+.forgot a {
+  color: #17d4c3; /* กำหนดสีลิงก์ */
+  text-decoration: none; /* เอาเส้นใต้ลิงก์ออก */
+}
+
+/* เอฟเฟกต์เมื่อโฮเวอร์ที่ลิงก์ */
+.forgot a:hover {
+  text-decoration: underline; /* เพิ่มเส้นใต้เมื่อเอาเมาส์ชี้ */
+  color: #07b0a2; /* กำหนดสีข้อความ */
+}
+
+/* ปุ่มล็อกอิน */
+.input-submit .submit-btn {
+  width: 100%; /* ขยายเต็มพื้นที่ */
+  height: 50px; /* กำหนดความสูง */
+  background: #9000f0; /* กำหนดสีพื้นหลัง */
+  color: rgb(255, 255, 255); /* กำหนดสีข้อความ */
+  font-size: 18px; /* กำหนดขนาดตัวอักษร */
+  font-weight: bold; /* ทำให้ตัวหนา */
+  border: none; /* ลบเส้นขอบ */
+  border-radius: 25px; /* ทำให้ขอบมน */
+  cursor: pointer; /* เปลี่ยนเมาส์เป็นรูปมือเมื่อชี้ */
+  transition: 0.3s; /* เพิ่มเอฟเฟกต์การเปลี่ยนสี */
+}
+.input-submit .submit-btn  a{
+  color: rgb(255, 255, 255); /* กำหนดสีข้อความ */
+  text-decoration: none;/* ทำให้ลิงค์ไม่เเสดงเส้นใต้ */
+}
+
+/* เอฟเฟกต์เมื่อโฮเวอร์ที่ปุ่ม */
+.input-submit .submit-btn:hover {
+  background: #6300a5; /* เปลี่ยนสีให้เข้มขึ้น */
+}
+
+/* ลิงก์สมัครสมาชิก */
+.sign-up-link {
+  margin-top: 20px; /* เพิ่มระยะห่างด้านบน */
+  font-size: 14px; /* กำหนดขนาดตัวอักษร */
+  color: #fff; /* กำหนดสีข้อความเป็นสีขาว */
+}
+
+.sign-up-link a {
+  color: #17d4c3; /* กำหนดสีของลิงก์ */
+  text-decoration: none; /* เอาเส้นใต้ลิงก์ออก */
+  font-weight: bold; /* ทำให้ตัวหนา */
+}
+
+/* เอฟเฟกต์เมื่อโฮเวอร์ที่ลิงก์ */
+.sign-up-link a:hover {
+  text-decoration: underline; /* เพิ่มเส้นใต้เมื่อโฮเวอร์ */
+  color: #07b0a2; /* กำหนดสีข้อความ */
+}

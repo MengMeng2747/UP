@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>แสดงความคิดเห็น</title>
+    <link rel="stylesheet" href="/Css/csstest.css">
+</head>
+
+<header>
+    <nav>
+        <a href="/home" class="nav-button"><h3>Back</h3></a>
+    </nav>
+</header>
+
+<body>
+    <form action="/add-comment" method="post">
+        <div class="comment-box">
+            <h2>แสดงความคิดเห็น</h2>
+            <input type="text" name="user" id="name" placeholder="ชื่อของคุณ" required>
+            <textarea id="comment" name="comment" placeholder="พิมพ์ความคิดเห็นของคุณ..." required></textarea>
+            <button type="submit">ส่งความคิดเห็น</button>
+            <div class="comments" id="comments"></div>
+        </div>
+    </form>
+
+    <script>
+        // เมื่อฟอร์มถูกส่ง
+        document.getElementById("commentForm").addEventListener("submit", function(event) {
+            event.preventDefault();  // ป้องกันการรีเฟรชหน้า
+
+            // ดึงค่าจากฟอร์ม
+            let name = document.getElementById("name").value;
+            let commentText = document.getElementById("comment").value;
+
+            // สร้างข้อมูลที่ต้องส่งไปยังเซิร์ฟเวอร์
+            let data = new FormData();
+            data.append('user', name);
+            data.append('comment', commentText);
+
+            // ส่งข้อมูลไปยังเซิร์ฟเวอร์ด้วย AJAX
+            fetch('/add-comment', {
+                method: 'post',
+                body: data
+            })
+            .then(response => response.json())  // ถ้าเซิร์ฟเวอร์ส่งข้อมูลกลับมาเป็น JSON
+            .then(data => {
+                if (data.success) {
+                    // แสดง popup ว่าการส่งข้อมูลสำเร็จ
+                    alert('ส่งความคิดเห็นสำเร็จ');
+                    
+                    // รีเซ็ตฟอร์ม
+                    document.getElementById("name").value = '';
+                    document.getElementById("comment").value = '';
+                } else {
+                    // ถ้าการส่งข้อมูลไม่สำเร็จ
+                    alert('เกิดข้อผิดพลาดในการส่งความคิดเห็น');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('เกิดข้อผิดพลาดในการส่งความคิดเห็น');
+            });
+        });
+    </script>
+</body>
+</html>

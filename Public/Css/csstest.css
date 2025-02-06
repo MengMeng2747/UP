@@ -1,0 +1,94 @@
+/* รีเซ็ตค่าเริ่มต้นของเบราว์เซอร์ */
+* {
+    margin: 0; /* ลบระยะขอบทั้งหมดของ elements */
+    padding: 0; /* ลบ padding เพื่อความสม่ำเสมอ */
+    box-sizing: border-box; /* กำหนดให้ขนาดรวม padding และ border */
+    font-family: Arial, sans-serif; /* ตั้งค่าฟอนต์เริ่มต้นเป็น Arial หรือ sans-serif */
+}
+
+/* ตั้งค่าพื้นหลังและการจัดวางโครงสร้างของ body */
+body {
+    display: flex; /* ใช้ flexbox จัด layout */
+    flex-direction: column; /* จัดให้อยู่ในแนวตั้ง */
+    min-height: 100vh; /* กำหนดให้ body มีความสูงอย่างน้อยเท่ากับ viewport */
+    background-color: #f4f4f4; /* กำหนดสีพื้นหลังอ่อน */
+    background-image: url(https://www.up.ac.th/images_news/Thumb/%E0%B8%AB%E0%B8%AD%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%8A%E0%B8%B8%E0%B8%A1%E0%B8%9E%E0%B8%8D%E0%B8%B2%E0%B8%87%E0%B8%B3%E0%B9%80%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B8%87_638544951942604029.jpg); /* ใส่รูปภาพเป็นพื้นหลัง */
+    text-align: center; /* จัดข้อความให้อยู่กึ่งกลาง */
+    background-size: cover; /* ปรับขนาดภาพให้เต็มพื้นที่ */
+    background-attachment: fixed; /* ทำให้ภาพพื้นหลังคงที่ ไม่เลื่อนตาม */
+}
+
+body {
+    font-family: Arial, sans-serif; /* กำหนดฟอนต์ให้กับทั้งหน้าเว็บ */
+    margin: 20px; /* ตั้งค่าระยะห่างจากขอบของหน้าจอ 20px */
+    padding: 20px; /* ตั้งค่าระยะห่างภายใน (padding) ของ body 20px */
+}
+
+input, textarea {
+    width: 100%; /* กำหนดความกว้างของ input และ textarea ให้เต็มพื้นที่ (100% ของ parent element) */
+    margin-top: 10px; /* กำหนดระยะห่างจากด้านบนของ input และ textarea เป็น 10px */
+    padding: 10px; /* เพิ่ม padding ให้กับ input และ textarea 10px */
+}
+
+button {
+    position: absolute; /* กำหนดให้ตำแหน่งสัมพันธ์กับองค์ประกอบที่ใกล้ที่สุด */
+    margin-top: 10px; /* เพิ่มระยะห่างจากด้านบนของปุ่ม 10px */
+    padding: 10px; /* เพิ่ม padding ภายในปุ่ม 10px */
+    background-color: blue; /* สีปุ่ม */
+    color: white; /* สีตัวอักษร */
+    border-radius: 5px; /* มุมโค้ง */
+    text-decoration: none; /* ลบขีดเส้นใต้ */
+    cursor: pointer; /* เปลี่ยนเคอร์เซอร์เป็น pointer (มือ) เมื่อ hover เหนือปุ่ม */
+}
+
+button:hover{
+    background: #771490; /* เปลี่ยนสีพื้นหลังของลิงก์เมื่อโฮเวอร์ */
+    border-radius: 5px; /* เพิ่มมุมโค้งมน */
+}
+
+.comment-item {
+    border-bottom: 1px solid #ccc; /* เพิ่มเส้นขอบด้านล่างสีเทาอ่อนให้กับ comment-item */
+    padding: 10px 0; /* เพิ่ม padding ด้านบนและด้านล่าง 10px */
+    white-space: pre-line; /* ทำให้ขึ้นบรรทัดใหม่เมื่อมีช่องว่าง */
+    word-wrap: break-word; /* ป้องกันข้อความหลุดกรอบ */
+}
+
+.comment-item strong {
+    display: block; /* เปลี่ยน strong ให้เป็น block element (แยกบรรทัด) */
+    color: blue; /* เปลี่ยนสีตัวอักษรของ strong เป็นสีน้ำเงิน */
+    margin-bottom: 5px; /* เพิ่มระยะห่างด้านล่างของ strong เป็น 5px */
+}
+
+.comment-box {
+    position: fixed; /* กำหนดตำแหน่งของ comment-box เป็น fixed (อยู่คงที่บนหน้าจอ) */
+    top: auto; /* ตั้งค่า top เป็น auto (จะใช้ในการคำนวณตำแหน่งจากด้านบน) */
+    left: 50%; /* ตั้งค่าตำแหน่งจากด้านซ้ายเป็น 50% (กลางหน้าจอ) */
+    transform: translateX(-50%); /* ใช้การแปลงตำแหน่งเพื่อย้าย comment-box ไปที่กลางหน้าจอ */
+    width: 100%; /* ความกว้างของ comment-box เต็มพื้นที่ (100% ของ parent element) */
+    max-width: 500px; /* กำหนดความกว้างสูงสุดของ comment-box เป็น 500px */
+    backdrop-filter: blur(10px); /* ทำให้พื้นหลังของ comment-box เบลอ (blur) */
+    padding: 20px; /* เพิ่ม padding ภายใน comment-box เป็น 20px */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* เพิ่มเงาให้กับ comment-box */
+    z-index: 1000; /* ตั้งค่า z-index ให้ comment-box อยู่บนสุด */
+    word-wrap: break-word; /* ป้องกันข้อความหลุดกรอบ */
+}
+
+.comments {
+    margin-top: 200px; /* ให้พื้นที่ด้านบนเพียงพอเพื่อไม่ให้ถูกบัง */
+}
+
+.nav-button {
+    position: absolute; /* กำหนดให้ตำแหน่งสัมพันธ์กับองค์ประกอบที่ใกล้ที่สุด */
+    top: 50px; /* ระยะห่างจากด้านบน */
+    right: 50px; /* ระยะห่างจากด้านขวา */
+    background-color: #24d400; /* สีปุ่ม */
+    color: white; /* สีตัวอักษร */
+    padding: 10px 20px; /* ระยะห่างด้านใน */
+    border-radius: 5px; /* มุมโค้ง */
+    text-decoration: none; /* ลบขีดเส้นใต้ */
+    font-size: 16px; /* ขนาดตัวอักษร */
+}
+
+.nav-button:hover {
+    background-color: #1ba000; /* เปลี่ยนสีเมื่อโฮเวอร์ */
+}

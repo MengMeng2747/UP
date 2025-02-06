@@ -6,45 +6,36 @@
     <title>Login</title>
     <link rel="stylesheet" href="/Css/Login.css">
 </head>
+
+
 <body>
-    <!-- กรอปทึบ -->
-    <div class="login-container">
-        <div class="login-box">
+    <div class="login-container"> <!-- คลาสใหญ่ Login -->
+        <div class="login-box"> <!-- กรอบล็อกอิน -->
             
-            <!-- โลโก้ -->
-            <div class="logo">
+            <div class="logo">  <!-- โลโก้ -->
                 <img src="https://www.up.ac.th/icon/up.png" alt="Logo">
             </div>
             
-            <!-- หัวของล็อกอิน -->
-            <h1 class="login-header">Login</h1>
+            <h1 class="login-header">Login</h1> <!-- หัวของล็อกอิน -->
             
-            <!-- ล็อกอิน -->
-            <form action="#" method="POST" class="login-form">
-                
-                <!-- ชื่อผู้ใช้ -->
+            <form action="/Register1" method="post" class="login-form">
                 <div class="input-box">
                     <input type="text" name="username" class="input-field" placeholder="Username" autocomplete="off" required>
                 </div>
-                
-                <!-- รหัสผ่าน -->
                 <div class="input-box">
                     <input type="password" name="password" class="input-field" placeholder="Password" autocomplete="off" required>
                 </div>
-                
-                <!-- ปุ่มตัวเลือก "จำรหัส"-->
                 <div class="forgot">
                     <label>
                         <input type="checkbox" id="check"> Remember Me
                     </label>
                     <a href="/Forgot" class="forgot-password">Forgot Password?</a>
                 </div>
-                
-                <!-- ปุ่มกดล็อกอิน -->
                 <div class="input-submit">
-                    <button type="submit" class="submit-btn"><a href="/home">Sign In</a></button>
+                    <button type="submit" class="submit-btn">Sign In</button>
                 </div>
             </form>
+            
             
             <!-- ลิงก์สำหรับสมัครบัญชีใหม่ -->
             <p class="sign-up-link">Don't have an account? <a href="/Register">Sign Up</a></p>

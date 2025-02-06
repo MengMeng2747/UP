@@ -3,26 +3,25 @@
     margin: 0; /* ลบระยะขอบทั้งหมดของ elements */
     padding: 0; /* ลบ padding เพื่อความสม่ำเสมอ */
     box-sizing: border-box; /* กำหนดให้ขนาดรวม padding และ border */
-    font-family: Arial, sans-serif; /* ตั้งค่าฟอนต์เริ่มต้น */
+    font-family: Arial, sans-serif; /* ตั้งค่าฟอนต์เริ่มต้นเป็น Arial หรือ sans-serif */
 }
 
-/* ตั้งค่าพื้นหลังและการจัดวางโครงสร้าง */
+/* ตั้งค่าพื้นหลังและการจัดวางโครงสร้างของ body */
 body {
     display: flex; /* ใช้ flexbox จัด layout */
     flex-direction: column; /* จัดให้อยู่ในแนวตั้ง */
-    min-height: 100vh; /* ทำให้ body มีความสูงอย่างน้อยเท่ากับ viewport */
-    background-color: #f4f4f4; /* สีพื้นหลังอ่อน */
-    background-image: url(https://www.up.ac.th/images_news/Thumb/%E0%B8%AB%E0%B8%AD%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%8A%E0%B8%B8%E0%B8%A1%E0%B8%9E%E0%B8%8D%E0%B8%B2%E0%B8%87%E0%B8%B3%E0%B9%80%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B8%87_638544951942604029.jpg);
-    backdrop-filter: blur(5px);
-    text-align: center;
-    background-size: cover;
-    
+    min-height: 100vh; /* กำหนดให้ body มีความสูงอย่างน้อยเท่ากับ viewport */
+    background-color: #f4f4f4; /* กำหนดสีพื้นหลังอ่อน */
+    background-image: url(https://www.up.ac.th/images_news/Thumb/%E0%B8%AB%E0%B8%AD%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%8A%E0%B8%B8%E0%B8%A1%E0%B8%9E%E0%B8%8D%E0%B8%B2%E0%B8%87%E0%B8%B3%E0%B9%80%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B8%87_638544951942604029.jpg); /* ใส่รูปภาพเป็นพื้นหลัง */
+    backdrop-filter: blur(5px); /* ทำให้พื้นหลังเบลอ */
+    text-align: center; /* จัดข้อความให้อยู่กึ่งกลาง */
+    background-size: cover; /* ปรับขนาดภาพให้เต็มพื้นที่ */
 }
 
 /* จัดการ header */
 header {
-    background: #ffffff; /* สีพื้นหลังของ header */
-    padding: 20px;
+    background: #ffffff; /* สีพื้นหลังของ header เป็นสีขาว */
+    padding: 20px; /* กำหนด padding รอบตัว header */
     text-align: center; /* จัดให้อยู่กึ่งกลาง */
 }
 
@@ -32,89 +31,93 @@ header img {
 
 /* จัดสไตล์เมนูนำทาง */
 nav {
-    background: #c820d7; /* กำหนดสีพื้นหลังของเมนู */
-    padding: 10px 0;
-    text-align: center;
+    background: #c820d7; /* กำหนดสีพื้นหลังของเมนูนำทาง */
+    padding: 10px 0; /* กำหนด padding บนและล่างของเมนู */
+    text-align: center; /* จัดวางให้อยู่ตรงกลาง */
 }
 
+/* จัดสไตล์สีข้อความเมนูนำทาง */
 nav a {
-    color: white;
-    text-decoration: none;
-    padding: 10px 20px;
-    font-size: 18px;
+    color: white; /* กำหนดสีข้อความของลิงก์เป็นสีขาว */
+    text-decoration: none; /* ลบเส้นใต้ของลิงก์ */
+    padding: 10px 20px; /* กำหนดขนาด padding ของลิงก์ */
+    font-size: 18px; /* กำหนดขนาดตัวอักษรของลิงก์ */
 }
 
 nav a:hover {
-    background: #771490; /* เปลี่ยนสีพื้นหลังเมื่อ hover */
-    border-radius: 5px;
+    background: #771490; /* เปลี่ยนสีพื้นหลังของลิงก์เมื่อโฮเวอร์ */
+    border-radius: 5px; /* เพิ่มมุมโค้งมน */
 }
 
 /* สไตล์ section หลัก */
 section {
-    flex: 1; /* ทำให้เนื้อหาด้านบนขยายตัวเมื่อมีพื้นที่เหลือ */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
+    flex: 1; /* ทำให้ section ขยายตัวเมื่อมีพื้นที่เหลือ */
+    display: flex; /* ใช้ flexbox */
+    justify-content: center; /* จัดเนื้อหาให้อยู่ตรงกลางแนวนอน */
+    align-items: center; /* จัดเนื้อหาให้อยู่ตรงกลางแนวตั้ง */
+    padding: 20px; /* กำหนด padding รอบ section */
 }
 
-.Detail {  
+/* กล่องเนื้อหาหลัก */
+.Detail {
     margin: 20px auto; /* จัดให้อยู่ตรงกลาง */
-    background: white; 
-    padding: 20px;  /* ขนาดทั้งหมดของ Block */
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    text-align: center;
+    background: white; /* กำหนดพื้นหลังสีขาว */
+    padding: 20px; /* กำหนดระยะห่างภายในกล่อง */
+    border-radius: 10px; /* ทำให้มุมโค้งมน */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* เพิ่มเงาให้กล่อง */
+    text-align: center; /* จัดข้อความให้อยู่ตรงกลาง */
 }
 
+/* สไตล์รูปภาพของคณะ */
 .faculty img {
-    width: 100%;
-    max-width: 800px;
-    border-radius: 10px; /* มุมโค้งมน */
+    width: 100%; /* ให้รูปภาพเต็มขนาดของ container */
+    max-width: 800px; /* กำหนดขนาดสูงสุด */
+    border-radius: 10px; /* ทำให้มุมโค้งมน */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* เพิ่มเงา */
 }
 
-/* สไตล์กล่องคณะ */
+/* กล่องของคณะ */
 .faculty1-list {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-    padding: 20px;
-    width: 100%;
-    height: 500px;
+    display: flex; /* ใช้ flexbox */
+    justify-content: center; /* จัดให้อยู่ตรงกลาง */
+    gap: 20px; /* กำหนดช่องว่างระหว่างกล่อง */
+    flex-wrap: wrap; /* ให้กล่องเรียงต่อกันเมื่อจอเล็กลง */
+    padding: 20px; /* กำหนด padding */
+    width: 100%; /* ใช้ความกว้างเต็มจอ */
+    height: 500px; /* กำหนดความสูง */
 }
 
 .faculty1 {
-    background: white;
-    padding: 15px;
-    border-radius: 10px;
-    text-align: center;
-    width: 300px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* เพิ่มเงาเบา ๆ */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
-    align-items: center; /* จัดให้อยู่กึ่งกลางแนวนอน */
+    background: white; /* กำหนดพื้นหลังสีขาว */
+    padding: 15px; /* กำหนด padding ภายในกล่อง */
+    border-radius: 10px; /* ทำให้มุมของกล่องโค้งมน */
+    text-align: center; /* จัดข้อความให้อยู่ตรงกลาง */
+    width: 300px; /* กำหนดความกว้างของกล่อง */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* เพิ่มเงาเบา ๆ ให้กับกล่อง */
+    display: flex; /* ใช้ flexbox layout */
+    flex-direction: column; /* จัดเรียงองค์ประกอบภายในกล่องในแนวตั้ง */
+    justify-content: space-between; /* จัดให้ช่องว่างระหว่างองค์ประกอบต่าง ๆ */
+    height: 100%; /* กำหนดความสูงให้เต็ม */
+    align-items: center; /* จัดองค์ประกอบให้ตรงกลางในแนวนอน */
 }
 
 .faculty1 img {
-    width: 50%;
-    border-radius: 10px;
-    transform: scale(1.5);
+    width: 50%; /* กำหนดขนาดของรูปภาพเป็น 50% ของขนาดกล่อง */
+    border-radius: 10px; /* ทำให้มุมของรูปภาพโค้งมน */
+    transform: scale(1.5); /* ขยายขนาดรูปภาพให้ใหญ่ขึ้น 1.5 เท่า */
 }
 
+/* สไตล์ของปุ่มในกล่องคณะ */
 .faculty1 button {
-    background: #0055a5;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 16px;
-    margin-top: auto;
-    align-self: center;
+    background: #0055a5; /* กำหนดสีพื้นหลังของปุ่ม */
+    color: white; /* กำหนดสีข้อความของปุ่ม */
+    border: none; /* ไม่มีขอบรอบปุ่ม */
+    padding: 10px 20px; /* กำหนดขนาด padding ในแนวนอนและแนวตั้ง */
+    cursor: pointer; /* เปลี่ยนเคอร์เซอร์เป็น pointer เมื่อวางเมาส์ที่ปุ่ม */
+    border-radius: 5px; /* ทำให้มุมของปุ่มโค้งมน */
+    font-size: 16px; /* กำหนดขนาดตัวอักษรในปุ่ม */
+    margin-top: auto; /* เพิ่มช่องว่างด้านบนให้ปุ่มห่างจากเนื้อหาด้านบน */
+    align-self: center; /* จัดตำแหน่งปุ่มให้อยู่ตรงกลาง */
 }
 
 .faculty1 .content {

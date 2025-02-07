@@ -3,7 +3,7 @@ const express = require('express')
 const path = require('path');
 const bcrypt = require('bcrypt');
 const mysql = require('mysql');
-const bodyParser = require('body-parser');
+// const bodyParser = require('body-parser');
 
 const port = 3000
 const app = express();
@@ -210,33 +210,66 @@ app.post('/Register1', (req, res) => {
 //--------------------------------------------------------------------------------------------
 
 // เพิ่มความคิดเห็นลงในฐานข้อมูล
+// app.post('/add-comment', (req, res) => {
+//     const { user, comment } = req.body;
+
+//     if (!user || !comment) {
+//         return res.status(400).json({ message: 'กรุณากรอกชื่อและความคิดเห็น' });
+//     }
+
+//     const query = 'INSERT INTO commentgg (user, comment) VALUES (?, ?)';
+//     db.query(query, [user, comment], (err, result) => {
+//         if (err) {
+//             console.error('เกิดข้อผิดพลาด:', err);
+//             return res.status(500).json({ message: 'เกิดข้อผิดพลาดในการเพิ่มความคิดเห็น' });
+//         }
+
+//         //  ถ้ารหัสผ่านถูกต้อง → Redirect ไปหน้าหลัก (เช่น "/home")
+//         res.status(200).json({ success: true, message: 'เพิ่มความคิดเห็นสำเร็จ' });
+//     });
+// });
+
+// // รับความคิดเห็นทั้งหมด
+// app.get('/test', (req, res) => {
+//     const query = 'SELECT * FROM commentgg';
+//     db.query(query, (err, results) => {
+//         if (err) {
+//             console.error('เกิดข้อผิดพลาด:', err);
+//             return res.status(500).json({ message: 'เกิดข้อผิดพลาดในการดึงข้อมูลความคิดเห็น' });
+//         }
+//         res.status(200).json(results);
+//     });
+// });
+
+
+// เพิ่มความคิดเห็นลงในฐานข้อมูล
 app.post('/add-comment', (req, res) => {
     const { user, comment } = req.body;
 
     if (!user || !comment) {
-        return res.status(400).json({ message: 'กรุณากรอกชื่อและความคิดเห็น' });
+        return res.status(400).json({ success: false, message: 'กรุณากรอกชื่อและความคิดเห็น' });
     }
 
     const query = 'INSERT INTO commentgg (user, comment) VALUES (?, ?)';
     db.query(query, [user, comment], (err, result) => {
         if (err) {
             console.error('เกิดข้อผิดพลาด:', err);
-            return res.status(500).json({ message: 'เกิดข้อผิดพลาดในการเพิ่มความคิดเห็น' });
+            return res.status(500).json({ success: false, message: 'เกิดข้อผิดพลาดในการเพิ่มความคิดเห็น' });
         }
 
-        //  ถ้ารหัสผ่านถูกต้อง → Redirect ไปหน้าหลัก (เช่น "/home")
-        res.redirect("/test");
+        res.status(200).json({ success: true, message: 'เพิ่มความคิดเห็นสำเร็จ' });
     });
 });
 
 // รับความคิดเห็นทั้งหมด
 app.get('/test', (req, res) => {
-    const query = 'SELECT * FROM commentgg';
+    const query = 'SELECT id, user, comment, DATE_FORMAT(created_at, "%Y-%m-%d %H:%i:%s") AS created_at FROM commentgg ORDER BY id DESC';
     db.query(query, (err, results) => {
         if (err) {
             console.error('เกิดข้อผิดพลาด:', err);
-            return res.status(500).json({ message: 'เกิดข้อผิดพลาดในการดึงข้อมูลความคิดเห็น' });
+            return res.status(500).json({ success: false, message: 'เกิดข้อผิดพลาดในการดึงข้อมูลความคิดเห็น' });
         }
         res.status(200).json(results);
     });
 });
+

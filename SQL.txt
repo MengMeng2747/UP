@@ -4,7 +4,7 @@ ColPositions_connform.ListSessions<|||>1<|||>0,1,2,3,4,5,6
 ColSort_connform.ListSessions<|||>1<|||>0,0
 MainWinOnMonitor<|||>3<|||>0
 MainWinWidth<|||>3<|||>879
-MainWinHeight<|||>3<|||>840
+MainWinHeight<|||>3<|||>839
 ColWidths_MainForm.ListDatabases<|||>1<|||>150,80,50,50,50,50,50,50,50,50,120
 ColsVisible_MainForm.ListDatabases<|||>1<|||>0,1,2,3,4,5,6,7,8,9,10
 ColPositions_MainForm.ListDatabases<|||>1<|||>0,1,2,3,4,5,6,7,8,9,10
@@ -17,7 +17,7 @@ ColWidths_MainForm.ListStatus<|||>1<|||>160,316,100,100
 ColsVisible_MainForm.ListStatus<|||>1<|||>0,1,2,3
 ColPositions_MainForm.ListStatus<|||>1<|||>0,1,2,3
 ColSort_MainForm.ListStatus<|||>1<|||>0,0
-ColWidths_MainForm.ListProcesses<|||>1<|||>70,80,80,80,80,50,50,188
+ColWidths_MainForm.ListProcesses<|||>1<|||>70,80,80,80,80,50,50,157
 ColsVisible_MainForm.ListProcesses<|||>1<|||>0,1,2,3,4,5,6,7
 ColPositions_MainForm.ListProcesses<|||>1<|||>0,1,2,3,4,5,6,7
 ColSort_MainForm.ListProcesses<|||>1<|||>0,1
@@ -55,8 +55,8 @@ ColWidths_frmTableEditor.listCheckConstraints<|||>1<|||>200,420
 ColsVisible_frmTableEditor.listCheckConstraints<|||>1<|||>0,1
 ColPositions_frmTableEditor.listCheckConstraints<|||>1<|||>0,1
 ColSort_frmTableEditor.listCheckConstraints<|||>1<|||>-1,0
-MainWinLeft<|||>3<|||>549
-MainWinTop<|||>3<|||>63
+MainWinLeft<|||>3<|||>811
+MainWinTop<|||>3<|||>16
 dbtreewidth<|||>3<|||>250
 sqloutheight<|||>3<|||>76
 ColWidths_UserManagerForm.listUsers<|||>1<|||>97,80
@@ -66,6 +66,10 @@ ColSort_UserManagerForm.listUsers<|||>1<|||>0,0
 CreateDbCollation<|||>1<|||>utf8mb4_general_ci
 querymemoheight<|||>3<|||>613
 FavoriteObjectsOnly<|||>3<|||>0
+ExportSQL_CreateDatabases<|||>3<|||>1
+ExportSQL_CreateTables<|||>3<|||>1
+ExportSQL_DataHow<|||>3<|||>2
+ExportSQL_Filenames<|||>1<|||>C:\Users\discr\OneDrive\เดสก์ท็อป\test\Final.sql<{{{><}}}>C:\Users\discr\OneDrive\เดสก์ท็อป\test\WEB001.sql<{{{><}}}>C:\Users\discr\OneDrive\เดสก์ท็อป\test\SQL.txt<{{{><}}}>
 SQLFile0<|||>1<|||>C:\Users\discr\AppData\Roaming\HeidiSQL\Backups\query-tab-2025-02-06_01-35-00-412.sql
 SQLFile1<|||>1<|||>C:\Users\discr\OneDrive\เดสก์ท็อป\mysql\iot_data_sm.sql
 Servers\iot\SessionCreated<|||>1<|||>2025-02-06 15:20:11
@@ -107,9 +111,9 @@ Servers\iot\LogFileDdl<|||>3<|||>0
 Servers\iot\LogFileDml<|||>3<|||>0
 Servers\iot\LogFilePath<|||>1<|||>C:\Users\discr\AppData\Roaming\HeidiSQL\Logs\%session\%db\%y%m%d.sql
 Servers\iot\ServerVersionFull<|||>1<|||>10.4.32-MariaDB - mariadb.org binary distribution
-Servers\iot\ConnectCount<|||>3<|||>4
+Servers\iot\ConnectCount<|||>3<|||>8
 Servers\iot\ServerVersion<|||>3<|||>100432
-Servers\iot\LastConnect<|||>1<|||>2025-02-07 16:28:03
+Servers\iot\LastConnect<|||>1<|||>2025-02-07 20:39:48
 Servers\iot\lastUsedDB<|||>1<|||>user
 Servers\iot\QueryHistory\1<|||>1<|||>2025-02-06 21:53:43|user|16|SHOW TABLES;<{{{><}}}>
 Servers\iot\QueryHistory\2<|||>1<|||>2025-02-06 21:54:49|user|15|CREATE TABLE commentgg (<{{{><}}}>    id INT AUTO_INCREMENT PRIMARY KEY,<{{{><}}}>    user VARCHAR(255) NOT NULL,<{{{><}}}>    comment TEXT NOT NULL,<{{{><}}}>    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP<{{{><}}}>);

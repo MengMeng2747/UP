@@ -189,11 +189,11 @@
     <div class="comments" id="comments">
         <h3>ความคิดเห็นล่าสุด</h3>
     </div>
-
+    
     <script>
-       
-    document.getElementById("commentForm").addEventListener("submit", function(event) {
-    event.preventDefault();  // ป้องกันการรีเฟรชหน้า
+        document.getElementById("comment").readOnly = false; // เปิดให้พิมพ์ได้
+        document.getElementById("commentForm").addEventListener("submit", function(event) {
+        event.preventDefault();  // ป้องกันการรีเฟรชหน้า
 
     let name = document.getElementById("name").value;
     let commentText = document.getElementById("comment").value;
@@ -207,33 +207,33 @@
 
     // ปิดปุ่มชั่วคราวระหว่างส่ง
     submitButton.disabled = true;
-
-    fetch('/add-comment', {
-        method: 'POST',
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ user: name, comment: commentText })
-    })
+        fetch('/add-comment', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ user: name, comment: commentText })
+        })
+        
     .then(response => response.json())
     .then(data => {
         if (data.success) {
             alert('ส่งความคิดเห็นสำเร็จ');
 
             // อัปเดตหน้าเว็บทันทีโดยเพิ่มความคิดเห็นใหม่เข้าไปใน HTML
-            let commentsDiv = document.getElementById("comments");
-            let newComment = document.createElement("div");
-            newComment.classList.add("comment-item");
+                let commentsDiv = document.getElementById("comments");
+                let newComment = document.createElement("div");
+                newComment.classList.add("comment-item");
 
             // ใส่เวลาปัจจุบัน
-            let now = new Date();
-            let timestamp = now.getFullYear() + "-" + 
-                            ("0" + (now.getMonth() + 1)).slice(-2) + "-" + 
-                            ("0" + now.getDate()).slice(-2) + " " + 
-                            ("0" + now.getHours()).slice(-2) + ":" + 
-                            ("0" + now.getMinutes()).slice(-2) + ":" + 
-                            ("0" + now.getSeconds()).slice(-2);
+                let now = new Date();
+                let timestamp = now.getFullYear() + "-" + 
+                                ("0" + (now.getMonth() + 1)).slice(-2) + "-" + 
+                                ("0" + now.getDate()).slice(-2) + " " + 
+                                ("0" + now.getHours()).slice(-2) + ":" + 
+                                ("0" + now.getMinutes()).slice(-2) + ":" + 
+                                ("0" + now.getSeconds()).slice(-2);
 
             newComment.innerHTML = `<strong>${name}</strong> (${timestamp}): <br> ${commentText}`;
             commentsDiv.insertBefore(newComment, commentsDiv.firstChild);
@@ -246,18 +246,15 @@
             alert('เกิดข้อผิดพลาด: ' + data.message);
         }
     })
-    .catch(error => {
-        console.error('Error:', error);
-        alert('เกิดข้อผิดพลาดในการส่งความคิดเห็น');
-    })
-    .finally(() => {
-        // เปิดปุ่มอีกครั้ง
-        submitButton.disabled = false;
+        .catch(error => {
+            console.error('Error:', error);
+            alert('เกิดข้อผิดพลาดในการส่งความคิดเห็น');
+        })
+        .finally(() => {
+            // เปิดปุ่มอีกครั้ง
+            submitButton.disabled = false;
+        });
     });
-});
-
-
-
     </script>
 </body>
-</html> 
+</html>

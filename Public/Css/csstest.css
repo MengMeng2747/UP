@@ -1,94 +1,121 @@
 /* รีเซ็ตค่าเริ่มต้นของเบราว์เซอร์ */
 * {
-    margin: 0; /* ลบระยะขอบทั้งหมดของ elements */
-    padding: 0; /* ลบ padding เพื่อความสม่ำเสมอ */
+    margin: 0; /* ลบระยะขอบของทุกองค์ประกอบ */
+    padding: 0; /* ลบระยะห่างด้านในของทุกองค์ประกอบ */
     box-sizing: border-box; /* กำหนดให้ขนาดรวม padding และ border */
-    font-family: Arial, sans-serif; /* ตั้งค่าฟอนต์เริ่มต้นเป็น Arial หรือ sans-serif */
+    font-family: Arial, sans-serif; /* กำหนดฟอนต์เริ่มต้นเป็น Arial หรือ sans-serif */
 }
 
-/* ตั้งค่าพื้นหลังและการจัดวางโครงสร้างของ body */
+/* กำหนดรูปแบบของหน้าเว็บ */
 body {
-    display: flex; /* ใช้ flexbox จัด layout */
-    flex-direction: column; /* จัดให้อยู่ในแนวตั้ง */
-    min-height: 100vh; /* กำหนดให้ body มีความสูงอย่างน้อยเท่ากับ viewport */
-    background-color: #f4f4f4; /* กำหนดสีพื้นหลังอ่อน */
-    background-image: url(https://www.up.ac.th/images_news/Thumb/%E0%B8%AB%E0%B8%AD%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%8A%E0%B8%B8%E0%B8%A1%E0%B8%9E%E0%B8%8D%E0%B8%B2%E0%B8%87%E0%B8%B3%E0%B9%80%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B8%87_638544951942604029.jpg); /* ใส่รูปภาพเป็นพื้นหลัง */
+    background: url(https://www.up.ac.th/images_news/Thumb/%E0%B8%AB%E0%B8%AD%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%8A%E0%B8%B8%E0%B8%A1%E0%B8%9E%E0%B8%8D%E0%B8%B2%E0%B8%87%E0%B8%B3%E0%B9%80%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B8%87_638544951942604029.jpg) no-repeat center center fixed; /* กำหนดภาพพื้นหลังและให้ปรับขนาดอัตโนมัติ */
+    background-size: cover; /* ให้ภาพเต็มพื้นที่หน้าจอ */
+    display: flex; /* ใช้ Flexbox จัดวางองค์ประกอบ */
+    flex-direction: column; /* จัดเรียงองค์ประกอบในแนวตั้ง */
+    align-items: center; /* จัดให้อยู่กึ่งกลางแนวตั้ง */
+    justify-content: center; /* จัดให้อยู่กึ่งกลางแนวนอน */
+    height: 100vh; /* ให้ความสูงเต็มหน้าจอ */
+}
+
+/* กล่องแสดงความคิดเห็น */
+.comment-box {
+    position: fixed; /* ล็อคตำแหน่งให้อยู่ที่ด้านบนของหน้าจอ */
+    top: 60px; /* ระยะห่างจากขอบบนของหน้าจอ */
+    left: 50%; /* จัดตำแหน่งกึ่งกลางแนวนอน */
+    transform: translateX(-50%); /* ปรับให้อยู่ตรงกลาง */
+    z-index: 1000; /* กำหนดให้กล่องอยู่เหนือองค์ประกอบอื่น */
+    background: rgba(255, 255, 255, 0.9); /* กำหนดสีพื้นหลังแบบโปร่งใสเล็กน้อย */
+    padding: 20px; /* เพิ่มช่องว่างภายในกล่อง */
+    border-radius: 10px; /* ทำให้ขอบกล่องโค้งมน */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* เพิ่มเงาให้กล่อง */
+    width: 90%; /* กำหนดความกว้างของกล่อง */
+    max-width: 500px; /* กำหนดความกว้างสูงสุดของกล่อง */
     text-align: center; /* จัดข้อความให้อยู่กึ่งกลาง */
-    background-size: cover; /* ปรับขนาดภาพให้เต็มพื้นที่ */
-    background-attachment: fixed; /* ทำให้ภาพพื้นหลังคงที่ ไม่เลื่อนตาม */
 }
 
-body {
-    font-family: Arial, sans-serif; /* กำหนดฟอนต์ให้กับทั้งหน้าเว็บ */
-    margin: 20px; /* ตั้งค่าระยะห่างจากขอบของหน้าจอ 20px */
-    padding: 20px; /* ตั้งค่าระยะห่างภายใน (padding) ของ body 20px */
+.comment-box h2 {
+    margin-bottom: 15px; /* เพิ่มช่องว่างด้านล่างของหัวข้อ */
+    color: #333; /* กำหนดสีข้อความเป็นสีเทาเข้ม */
 }
 
-input, textarea {
-    width: 100%; /* กำหนดความกว้างของ input และ textarea ให้เต็มพื้นที่ (100% ของ parent element) */
-    margin-top: 10px; /* กำหนดระยะห่างจากด้านบนของ input และ textarea เป็น 10px */
-    padding: 10px; /* เพิ่ม padding ให้กับ input และ textarea 10px */
+.comment-box input,
+.comment-box textarea {
+    width: 100%; /* กำหนดความกว้างเต็มพื้นที่ของกล่อง */
+    padding: 10px; /* กำหนดระยะห่างภายใน */
+    margin: 5px 0; /* กำหนดระยะห่างด้านบนและล่าง */
+    border: 1px solid #ccc; /* กำหนดเส้นขอบ */
+    border-radius: 5px; /* ทำให้ขอบโค้งมน */
 }
 
-button {
-    position: absolute; /* กำหนดให้ตำแหน่งสัมพันธ์กับองค์ประกอบที่ใกล้ที่สุด */
-    margin-top: 10px; /* เพิ่มระยะห่างจากด้านบนของปุ่ม 10px */
-    padding: 10px; /* เพิ่ม padding ภายในปุ่ม 10px */
-    background-color: blue; /* สีปุ่ม */
-    color: white; /* สีตัวอักษร */
-    border-radius: 5px; /* มุมโค้ง */
-    text-decoration: none; /* ลบขีดเส้นใต้ */
-    cursor: pointer; /* เปลี่ยนเคอร์เซอร์เป็น pointer (มือ) เมื่อ hover เหนือปุ่ม */
+.comment-box textarea {
+    min-height: 100px; /* กำหนดความสูงขั้นต่ำ */
+    resize: vertical; /* อนุญาตให้ปรับขนาดแนวตั้งได้ */
 }
 
-button:hover{
-    background: #771490; /* เปลี่ยนสีพื้นหลังของลิงก์เมื่อโฮเวอร์ */
-    border-radius: 5px; /* เพิ่มมุมโค้งมน */
+.comment-box button {
+    background: #007bff; /* กำหนดสีพื้นหลังเป็นสีน้ำเงิน */
+    color: white; /* กำหนดสีข้อความเป็นสีขาว */
+    border: none; /* ไม่มีเส้นขอบ */
+    padding: 10px 15px; /* กำหนดขนาดของปุ่ม */
+    cursor: pointer; /* เปลี่ยนเคอร์เซอร์เมื่อโฮเวอร์ */
+    border-radius: 5px; /* ทำให้ขอบโค้งมน */
+    font-size: 16px; /* กำหนดขนาดตัวอักษร */
+    transition: background 0.3s; /* ทำให้การเปลี่ยนสีเป็นไปอย่างนุ่มนวล */
+}
+
+.comment-box button:hover {
+    background: #0056b3; /* เปลี่ยนสีปุ่มเมื่อโฮเวอร์ */
+}
+
+/* กล่องความคิดเห็น */
+.comments {
+    position: fixed; /* ตรึงกล่องความคิดเห็นที่ด้านล่าง */
+    bottom: 60px; /* ระยะห่างจากขอบล่างของหน้าจอ */
+    left: 50%; /* จัดตำแหน่งให้อยู่กึ่งกลางแนวนอน */
+    transform: translateX(-50%); /* ปรับตำแหน่งให้กึ่งกลาง */
+    z-index: 1000; /* ทำให้กล่องอยู่เหนือองค์ประกอบอื่น */
+    width: 90%; /* ขยายความกว้างของกล่อง */
+    max-width: 900px; /* กำหนดขนาดสูงสุดของกล่อง */
+    background: rgba(255, 255, 255, 0.95); /* เพิ่มความทึบของพื้นหลัง */
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25); /* เพิ่มเงาให้กล่อง */
+    max-height: 450px; /* กำหนดความสูงสูงสุด */
+    overflow-y: auto; /* เปิดให้เลื่อนดูความคิดเห็นย้อนหลัง */
+}
+
+.comments h3 {
+    text-align: center; /* จัดข้อความให้อยู่กึ่งกลาง */
+    color: #333; /* กำหนดสีข้อความ */
 }
 
 .comment-item {
-    border-bottom: 1px solid #ccc; /* เพิ่มเส้นขอบด้านล่างสีเทาอ่อนให้กับ comment-item */
-    padding: 10px 0; /* เพิ่ม padding ด้านบนและด้านล่าง 10px */
-    white-space: pre-line; /* ทำให้ขึ้นบรรทัดใหม่เมื่อมีช่องว่าง */
-    word-wrap: break-word; /* ป้องกันข้อความหลุดกรอบ */
+    background: white; /* กำหนดพื้นหลังของแต่ละความคิดเห็นเป็นสีขาว */
+    padding: 10px; /* เพิ่มช่องว่างภายในความคิดเห็น */
+    margin-top: 10px; /* กำหนดระยะห่างระหว่างความคิดเห็นแต่ละอัน */
+    border-left: 4px solid #007bff; /* เพิ่มเส้นสีฟ้าทางด้านซ้ายของความคิดเห็น */
+    border-radius: 5px; /* ทำให้ขอบของความคิดเห็นโค้งมน */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* เพิ่มเงาให้ความคิดเห็นดูโดดเด่นขึ้น */
+    border-bottom: 1px solid #ccc; /* เพิ่มเส้นแบ่งระหว่างแต่ละความคิดเห็น */
+    padding-bottom: 15px; /* กำหนดระยะห่างด้านล่างของความคิดเห็น */
 }
 
-.comment-item strong {
-    display: block; /* เปลี่ยน strong ให้เป็น block element (แยกบรรทัด) */
-    color: blue; /* เปลี่ยนสีตัวอักษรของ strong เป็นสีน้ำเงิน */
-    margin-bottom: 5px; /* เพิ่มระยะห่างด้านล่างของ strong เป็น 5px */
-}
 
-.comment-box {
-    position: fixed; /* กำหนดตำแหน่งของ comment-box เป็น fixed (อยู่คงที่บนหน้าจอ) */
-    top: auto; /* ตั้งค่า top เป็น auto (จะใช้ในการคำนวณตำแหน่งจากด้านบน) */
-    left: 50%; /* ตั้งค่าตำแหน่งจากด้านซ้ายเป็น 50% (กลางหน้าจอ) */
-    transform: translateX(-50%); /* ใช้การแปลงตำแหน่งเพื่อย้าย comment-box ไปที่กลางหน้าจอ */
-    width: 100%; /* ความกว้างของ comment-box เต็มพื้นที่ (100% ของ parent element) */
-    max-width: 500px; /* กำหนดความกว้างสูงสุดของ comment-box เป็น 500px */
-    backdrop-filter: blur(10px); /* ทำให้พื้นหลังของ comment-box เบลอ (blur) */
-    padding: 20px; /* เพิ่ม padding ภายใน comment-box เป็น 20px */
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* เพิ่มเงาให้กับ comment-box */
-    z-index: 1000; /* ตั้งค่า z-index ให้ comment-box อยู่บนสุด */
-    word-wrap: break-word; /* ป้องกันข้อความหลุดกรอบ */
-}
-
-.comments {
-    margin-top: 200px; /* ให้พื้นที่ด้านบนเพียงพอเพื่อไม่ให้ถูกบัง */
-}
-
+/* ปุ่มกลับไปหน้าหลัก */
 .nav-button {
-    position: absolute; /* กำหนดให้ตำแหน่งสัมพันธ์กับองค์ประกอบที่ใกล้ที่สุด */
-    top: 50px; /* ระยะห่างจากด้านบน */
-    right: 50px; /* ระยะห่างจากด้านขวา */
-    background-color: #24d400; /* สีปุ่ม */
-    color: white; /* สีตัวอักษร */
-    padding: 10px 20px; /* ระยะห่างด้านใน */
-    border-radius: 5px; /* มุมโค้ง */
-    text-decoration: none; /* ลบขีดเส้นใต้ */
-    font-size: 16px; /* ขนาดตัวอักษร */
+    position: fixed; /* ตรึงปุ่มให้อยู่มุมขวาบนของหน้าจอ */
+    top: 60px; /* ระยะห่างจากขอบบนของหน้าจอ */
+    right: 60px; /* ระยะห่างจากขอบขวาของหน้าจอ */
+    display: inline-block; /* แสดงเป็นปุ่มอินไลน์ */
+    padding: 10px 15px; /* กำหนดขนาดของปุ่ม */
+    background: #24d400; /* กำหนดสีพื้นหลังของปุ่มเป็นสีส้ม */
+    color: white; /* กำหนดสีข้อความเป็นสีขาว */
+    text-decoration: none; /* ลบขีดเส้นใต้ข้อความ */
+    border-radius: 5px; /* ทำให้ขอบปุ่มโค้งมน */
+    transition: background 0.3s; /* ทำให้การเปลี่ยนสีปุ่มนุ่มนวล */
+    z-index: 1100; /* กำหนดให้ปุ่มอยู่เหนือองค์ประกอบอื่น */
 }
 
 .nav-button:hover {
-    background-color: #1ba000; /* เปลี่ยนสีเมื่อโฮเวอร์ */
+    background: #1ba000; /* เปลี่ยนสีปุ่มเมื่อโฮเวอร์ */
 }

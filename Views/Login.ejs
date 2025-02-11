@@ -1,40 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"> <!-- กำหนดภาษาเป็นภาษาอังกฤษ -->
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="stylesheet" href="/Css/Login.css">
+    <meta charset="UTF-8"> <!-- กำหนดการเข้ารหัสตัวอักษรเป็น UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- ทำให้หน้าเว็บรองรับอุปกรณ์มือถือ -->
+    <title>Login</title> <!-- ตั้งชื่อแท็บของเว็บเป็น "Login" -->
+    <link rel="stylesheet" href="/Css/Login.css"> <!-- ลิงก์ไปยังไฟล์ CSS เพื่อกำหนดสไตล์ของหน้าเว็บ -->
 </head>
 
-
 <body>
-    <div class="login-container"> <!-- คลาสใหญ่ Login -->
-        <div class="login-box"> <!-- กรอบล็อกอิน -->
+    <div class="login-container"> <!-- คลาสหลักสำหรับจัดตำแหน่งกล่องล็อกอินให้อยู่ตรงกลางของหน้า -->
+        <div class="login-box"> <!-- กรอบล็อกอินที่มีเนื้อหาอยู่ภายใน -->
             
-            <div class="logo">  <!-- โลโก้ -->
-                <img src="https://www.up.ac.th/icon/up.png" alt="Logo">
+            <div class="logo">  <!-- ส่วนของโลโก้ -->
+                <img src="https://www.up.ac.th/icon/up.png" alt="Logo"> <!-- แสดงโลโก้ของมหาวิทยาลัยพะเยา -->
             </div>
             
-            <h1 class="login-header">Login</h1> <!-- หัวของล็อกอิน -->
+            <h1 class="login-header">Login</h1> <!-- หัวข้อหลักของหน้าล็อกอิน -->
             
-            <form action="/Register1" method="post" class="login-form">
+            <!-- ฟอร์มล็อกอิน -->
+            <form action="/Register1" method="post" class="login-form"> <!-- ฟอร์มส่งข้อมูลไปยัง "/Register1" ผ่าน HTTP POST -->
+                
+                <!-- ช่องกรอกชื่อผู้ใช้ -->
                 <div class="input-box">
                     <input type="text" name="username" class="input-field" placeholder="Username" autocomplete="off" required>
+                    <!-- ช่องอินพุตสำหรับใส่ชื่อผู้ใช้, ปิด auto-complete เพื่อความปลอดภัย, และกำหนดให้ต้องกรอกข้อมูล -->
                 </div>
                 
+                <!-- ช่องกรอกรหัสผ่าน -->
                 <div class="input-box">
                     <input type="password" name="password" class="input-field" placeholder="Password" autocomplete="off" required>
+                    <!-- ช่องอินพุตสำหรับใส่รหัสผ่าน, ปิด auto-complete และกำหนดให้ต้องกรอกข้อมูล -->
                 </div>
             
+                <!-- ปุ่มสำหรับส่งฟอร์มล็อกอิน -->
                 <div class="input-submit">
                     <button type="submit" class="submit-btn">Sign In</button>
+                    <!-- ปุ่มกดเพื่อล็อกอิน -->
                 </div>
             </form>
             
-            
             <!-- ลิงก์สำหรับสมัครบัญชีใหม่ -->
             <p class="sign-up-link">Don't have an account? <a href="/Register">Sign Up</a></p>
+            <!-- ข้อความแจ้งผู้ใช้ให้สมัครบัญชีใหม่ พร้อมลิงก์ไปยังหน้า "/Register" -->
             
         </div>
     </div>

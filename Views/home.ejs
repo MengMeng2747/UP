@@ -1,95 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="stylesheet" href="/Css/csshome.css">
+    <meta charset="UTF-8"> <!-- กำหนดรูปแบบการเข้ารหัสเป็น UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- รองรับการแสดงผลบนอุปกรณ์มือถือ -->
+    <title>Login</title> <!-- ตั้งชื่อแท็บของเว็บไซต์ -->
+    <link rel="stylesheet" href="/Css/csshome.css"> <!-- ลิงก์ไปยังไฟล์ CSS -->
 </head>
 
-
 <body>
-    <!-- จัดการ header -->
+    <!-- ส่วน header แสดงโลโก้ -->
     <header>
-        <img src="https://www.up.ac.th/icon/up.png" alt="">
+        <img src="https://www.up.ac.th/icon/up.png" alt=""> <!-- แสดงโลโก้มหาวิทยาลัย -->
     </header>
 
-    <!-- จัดสไตล์เมนูนำทาง -->
+    <!-- สร้างเมนูนำทาง -->
     <nav>
-        <a href="/home">หน้าแรก</a>
-        <a href="/Project">คณะต่างๆ</a>
-        <a href="/test">แสดงความคิดเห็น</a>
-        <a href="/Register">สมัครสมาชิก</a>
+        <a href="/home">หน้าแรก</a> <!-- ลิงก์ไปหน้าแรก -->
+        <a href="/Project">คณะต่างๆ</a> <!-- ลิงก์ไปหน้าข้อมูลคณะ -->
+        <a href="/test">แสดงความคิดเห็น</a> <!-- ลิงก์ไปหน้าแสดงความคิดเห็น -->
+        <a href="/Register">สมัครสมาชิก</a> <!-- ลิงก์ไปหน้าสมัครสมาชิก -->
     </nav>
 
+    <!-- ส่วนของเนื้อหา (section) -->
     <section>
         <div class="faculty">
             <img src="https://www.up.ac.th/slide/2567/Banner-WUR-2025-01.jpg" alt="ภาพคณะเกษตรศาสตร์">
+            <!-- แสดงภาพของมหาวิทยาลัย -->
         </div>
     </section>
 
-    <!-- กล่องเนื้อหาหลัก -->
+    <!-- กล่องแสดงเนื้อหาหลัก -->
     <div class="Detail">
-        <h1>รายละเอียดเพิ่มเติมจากเว็บหลักมหาวิทยาลัยพะเยา</h1>
+        <h1>รายละเอียดเพิ่มเติมจากเว็บหลักมหาวิทยาลัยพะเยา</h1> <!-- หัวข้อหลัก -->
     </div>
 
-        <div class="faculty1-list">
-            <div class="faculty1">
-                <h2>คู่มือสมัครเรียน</h2>
-                <img src="https://img5.pic.in.th/file/secure-sv1/9fa2fc0a-8f6b-48ec-a7c5-03c157c3c9a3.jpg">
-                <center><a href="https://admission.up.ac.th/"><button>Click</button></a></center>
-            </div>
+    <!-- รายการคณะที่มีลิงก์และปุ่ม -->
+    <div class="faculty1-list">
+        <!-- กล่องที่ 1 : คู่มือสมัครเรียน -->
+        <div class="faculty1">
+            <h2>คู่มือสมัครเรียน</h2> <!-- หัวข้อ -->
+            <img src="https://img5.pic.in.th/file/secure-sv1/9fa2fc0a-8f6b-48ec-a7c5-03c157c3c9a3.jpg">
+            <!-- รูปภาพของคู่มือสมัครเรียน -->
+            <center><a href="https://admission.up.ac.th/"><button>Click</button></a></center>
+            <!-- ปุ่มที่ลิงก์ไปยังเว็บไซต์สมัครเรียน -->
+        </div>
 
-            <!-- คณะ ลิงค์รูปภาพ เเละ ปุ่ม-->
-            <div class="faculty1">
-                <h2>คู่มือนิสิต</h2>
-                <img src="https://img5.pic.in.th/file/secure-sv1/77dda974c7a20b0ceb.jpg">
-                <center><a href="https://up.ac.th/Student_Manual.aspx"><button>Click</button></a></center>
-            </div>
+        <!-- กล่องที่ 2 : คู่มือนิสิต -->
+        <div class="faculty1">
+            <h2>คู่มือนิสิต</h2> <!-- หัวข้อ -->
+            <img src="https://img5.pic.in.th/file/secure-sv1/77dda974c7a20b0ceb.jpg">
+            <!-- รูปภาพของคู่มือนิสิต -->
+            <center><a href="https://up.ac.th/Student_Manual.aspx"><button>Click</button></a></center>
+            <!-- ปุ่มที่ลิงก์ไปยังคู่มือนิสิต -->
+        </div>
 
-            <div class="faculty1">
-                <h2>ช่องทาง ถาม-ตอบ Q&A</h2>
-                <img src="https://img5.pic.in.th/file/secure-sv1/76a4715b9ffbaa4c1f.jpg">
-                <center><a href="https://up.ac.th/QuDa.aspx"><button>Click</button></a></center>
-            </div>
-        </div>  
+        <!-- กล่องที่ 3 : ช่องทาง ถาม-ตอบ Q&A -->
+        <div class="faculty1">
+            <h2>ช่องทาง ถาม-ตอบ Q&A</h2> <!-- หัวข้อ -->
+            <img src="https://img5.pic.in.th/file/secure-sv1/76a4715b9ffbaa4c1f.jpg">
+            <!-- รูปภาพของ Q&A -->
+            <center><a href="https://up.ac.th/QuDa.aspx"><button>Click</button></a></center>
+            <!-- ปุ่มที่ลิงก์ไปยังหน้า Q&A -->
+        </div>
+    </div>  
 </body>
 
-<!-- ฟุตเตอร์ -->
+<!-- ส่วนฟุตเตอร์ -->
 <footer>
     <div class="footer-main">
         <div class="footer-content">
+            <!-- ส่วนซ้ายของฟุตเตอร์ -->
             <div class="footer-left">
-                <h2>&copy; 2025 มหาวิทยาลัยพะเยา</h2>
-                <p>มหาวิทยาลัยพะเยา มุ่งเน้นการศึกษาและการพัฒนาสังคมอย่างยั่งยืน</p>
-                <p>ที่อยู่: 19 หมู่ 2 ต.แม่กา อ.เมืองพะเยา จ.พะเยา 56000</p>
+                <h2>&copy; 2025 มหาวิทยาลัยพะเยา</h2> <!-- ข้อความลิขสิทธิ์ -->
+                <p>มหาวิทยาลัยพะเยา มุ่งเน้นการศึกษาและการพัฒนาสังคมอย่างยั่งยืน</p> <!-- คำอธิบายมหาวิทยาลัย -->
+                <p>ที่อยู่: 19 หมู่ 2 ต.แม่กา อ.เมืองพะเยา จ.พะเยา 56000</p> <!-- ที่อยู่มหาวิทยาลัย -->
             </div>
 
+            <!-- ส่วนตรงกลางของฟุตเตอร์ -->
             <div class="footer-middle">
-                <h3>เมนูลัด</h3>
+                <h3>เมนูลัด</h3> <!-- หัวข้อเมนู -->
                 <ul>
-                    <li><a href="/Project">หลักสูตรการเรียน</a></li>
-                    <li><a href="/home">ข่าวสารและกิจกรรม</a></li>
+                    <li><a href="/Project">หลักสูตรการเรียน</a></li> <!-- ลิงก์ไปหน้าหลักสูตร -->
+                    <li><a href="/home">ข่าวสารและกิจกรรม</a></li> <!-- ลิงก์ไปหน้าข่าวสาร -->
                 </ul>
             </div>
 
+            <!-- ส่วนขวาของฟุตเตอร์ -->
             <div class="footer-right">
-                <h3>ติดต่อเรา</h3>
-                <p>โทรศัพท์: 012-345-6789</p>
-                <p>อีเมล: info@up.ac.th</p>
+                <h3>ติดต่อเรา</h3> <!-- หัวข้อการติดต่อ -->
+                <p>โทรศัพท์: 012-345-6789</p> <!-- เบอร์โทรศัพท์ -->
+                <p>อีเมล: info@up.ac.th</p> <!-- อีเมล -->
 
+                <!-- ไอคอนโซเชียลมีเดีย -->
                 <div class="social-icons">
                     <a href="https://www.facebook.com/profile.php?id=100008231021431" target="_blank">
                         <img src="https://cdn.pixabay.com/photo/2021/06/15/12/51/facebook-6338509_1280.png" alt="Facebook" class="social-icon">
+                        <!-- ไอคอน Facebook -->
                     </a>
                     <a href="https://line.me/ti/p/F8sfRpg1L5" target="_blank">
                         <img src="https://positioningmag.com/wp-content/uploads/importedmedia/blogmedia-60818.png" alt="Line" class="social-icon">
+                        <!-- ไอคอน Line -->
                     </a>
                 </div>
             </div>
         </div>
     </div>
 </footer>
-
 
 </html>

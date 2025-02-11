@@ -1,260 +1,106 @@
-<!-- <!DOCTYPE html>
-<html lang="th">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>แสดงความคิดเห็น</title>
-    <link rel="stylesheet" href="/Css/csstest.css">
-</head>
-
-<header>
-    <nav>
-        <a href="/home" class="nav-button"><h3>Back</h3></a>
-    </nav>
-</header>
-
-<body>
-    <form id="commentForm" action="/add-comment" method="post">
-        <div class="comment-box">
-            <h2>แสดงความคิดเห็น</h2>
-            <input type="text" name="user" id="name" placeholder="ชื่อของคุณ" required>
-            <textarea id="comment" name="comment" placeholder="พิมพ์ความคิดเห็นของคุณ..." required></textarea>
-            <button type="submit">ส่งความคิดเห็น</button>
-            <div class="comments" id="comments"></div>
-        </div>
-    </form>
-
-    <script>
-        document.getElementById("commentForm").addEventListener("submit", function(event) {
-    event.preventDefault();  // ป้องกันการรีเฟรชหน้า
-
-    let name = document.getElementById("name").value;
-    let commentText = document.getElementById("comment").value;
-    let submitButton = document.querySelector("button[type='submit']");
-
-    // ปิดปุ่มส่งข้อมูลชั่วคราว
-    submitButton.disabled = true;
-
-    fetch('/add-comment', {
-        method: 'POST',
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ user: name, comment: commentText })
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.success) {
-            alert('ส่งความคิดเห็นสำเร็จ');
-            document.getElementById("name").value = '';
-            document.getElementById("comment").value = '';
-        } else {
-            alert('เกิดข้อผิดพลาด: ' + data.message);
-        }
-    })
-    .catch(error => {
-        console.error('Error:', error);
-        alert('เกิดข้อผิดพลาดในการส่งความคิดเห็น');
-    })
-    .finally(() => {
-        // เปิดปุ่มอีกครั้ง
-        submitButton.disabled = false;
-    });
-});
-    </script>
-</body>
-</html> -->
-
-<!-- 
 <!DOCTYPE html>
 <html lang="th">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>แสดงความคิดเห็น</title>
-    <link rel="stylesheet" href="/Css/csstest.css">
+    <link rel="stylesheet" href="/Css/csstest.css"> <!-- ลิงก์ไปยังไฟล์ CSS ที่ใช้สำหรับสไตล์ของหน้านี้ -->
 </head>
 
-<header>
+<header> <!-- ส่วนหัวของหน้าเว็บ -->
     <nav>
-        <a href="/home" class="nav-button"><h3>Back</h3></a>
+        <a href="/home" class="nav-button"><h3>Back</h3></a> <!-- ปุ่มกลับไปหน้าหลัก -->
     </nav>
 </header>
 
-<body>
+<body> <!-- เริ่มต้นส่วนเนื้อหาของหน้าเว็บ -->
+    
+    <!-- ฟอร์มสำหรับกรอกความคิดเห็น -->
     <form id="commentForm" action="/add-comment" method="post">
-        <div class="comment-box">
-            <h2>แสดงความคิดเห็น</h2>
-            <input type="text" name="user" id="name" placeholder="ชื่อของคุณ" required>
+        <div class="comment-box"> <!-- กล่องของฟอร์มแสดงความคิดเห็น -->
+            <h2>แสดงความคิดเห็น</h2> <!-- หัวข้อของฟอร์ม -->
+            <input type="text" name="user" id="name" placeholder="ชื่อของคุณ" required> 
+            <!-- ช่องกรอกชื่อผู้ใช้ -->
             <textarea id="comment" name="comment" placeholder="พิมพ์ความคิดเห็นของคุณ..." required></textarea>
-            <button type="submit">ส่งความคิดเห็น</button>
-            <div class="comments" id="comments"></div>
+            <!-- ช่องกรอกความคิดเห็น -->
+            <button type="submit">ส่งความคิดเห็น</button> <!-- ปุ่มส่งความคิดเห็น -->
         </div>
     </form>
-
-    <script>
-        // โหลดความคิดเห็นจากเซิร์ฟเวอร์
-        function loadComments() {
-            fetch('/test')
-                .then(response => response.json())
-                .then(comments => {
-                    let commentsDiv = document.getElementById("comments");
-                    commentsDiv.innerHTML = ""; // เคลียร์คอมเมนต์เก่าก่อนโหลดใหม่
-
-                    comments.forEach(comment => {
-                        let commentElement = document.createElement("div");
-                        commentElement.classList.add("comment-item");
-                        commentElement.innerHTML = `<strong>${comment.user}:</strong> ${comment.comment}`;
-                        commentsDiv.appendChild(commentElement);
-                    });
-                })
-                .catch(error => console.error('Error loading comments:', error));
-        }
+    
+    <!-- ส่วนแสดงความคิดเห็นล่าสุด -->
+    <div class="comments" id="comments">
+        <h3>ความคิดเห็นล่าสุด</h3> <!-- หัวข้อของส่วนแสดงความคิดเห็น -->
+    </div>
+    
+    <script> <!-- เริ่มต้นโค้ด JavaScript -->
+        document.getElementById("comment").readOnly = false; // ตั้งค่าให้สามารถพิมพ์ได้ในช่องแสดงความคิดเห็น
 
         document.getElementById("commentForm").addEventListener("submit", function(event) {
-            event.preventDefault();  // ป้องกันการรีเฟรชหน้า
+            event.preventDefault();  // ป้องกันการรีเฟรชหน้าเมื่อกดปุ่มส่งฟอร์ม
 
-            let name = document.getElementById("name").value;
-            let commentText = document.getElementById("comment").value;
-            let submitButton = document.querySelector("button[type='submit']");
+            let name = document.getElementById("name").value; // รับค่าชื่อจากช่องอินพุต
+            let commentText = document.getElementById("comment").value; // รับค่าความคิดเห็นจากช่องอินพุต
+            let submitButton = document.querySelector("button[type='submit']"); // ดึงปุ่ม Submit มาใช้งาน
 
-            // ปิดปุ่มส่งข้อมูลชั่วคราว
+            // ตรวจสอบว่ามีข้อมูลหรือไม่
+            if (!name || !commentText) {
+                alert("กรุณากรอกชื่อและความคิดเห็น"); // แสดงข้อความแจ้งเตือนหากไม่ได้กรอกข้อมูล
+                return; // หยุดการทำงานของฟังก์ชัน
+            }
+
+            // ปิดปุ่มชั่วคราวระหว่างส่งข้อมูล
             submitButton.disabled = true;
 
+            // ส่งข้อมูลไปยังเซิร์ฟเวอร์ด้วย Fetch API
             fetch('/add-comment', {
-                method: 'POST',
+                method: 'POST', // ใช้ HTTP POST ในการส่งข้อมูล
                 headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
+                    'Accept': 'application/json', // ระบุว่าต้องการรับข้อมูลแบบ JSON
+                    'Content-Type': 'application/json' // ระบุว่าข้อมูลที่ส่งไปเป็น JSON
                 },
-                body: JSON.stringify({ user: name, comment: commentText })
+                body: JSON.stringify({ user: name, comment: commentText }) // แปลงข้อมูลเป็น JSON และส่งไปยังเซิร์ฟเวอร์
             })
-            .then(response => response.json())
+            
+            .then(response => response.json()) // แปลงข้อมูลที่ได้รับจากเซิร์ฟเวอร์เป็น JSON
             .then(data => {
-                if (data.success) {
-                    alert('ส่งความคิดเห็นสำเร็จ');
+                if (data.success) { // ตรวจสอบว่าการส่งข้อมูลสำเร็จหรือไม่
+                    alert('ส่งความคิดเห็นสำเร็จ'); // แจ้งเตือนผู้ใช้
+
+                    // เพิ่มความคิดเห็นใหม่เข้าไปใน HTML ทันที
+                    let commentsDiv = document.getElementById("comments"); // ดึงส่วนแสดงความคิดเห็นมาใช้งาน
+                    let newComment = document.createElement("div"); // สร้างแท็ก div ใหม่สำหรับความคิดเห็น
+                    newComment.classList.add("comment-item"); // เพิ่ม class "comment-item" ให้กับ div ใหม่
+
+                    // สร้าง timestamp ปัจจุบัน
+                    let now = new Date();
+                    let timestamp = now.getFullYear() + "-" + 
+                                    ("0" + (now.getMonth() + 1)).slice(-2) + "-" + 
+                                    ("0" + now.getDate()).slice(-2) + " " + 
+                                    ("0" + now.getHours()).slice(-2) + ":" + 
+                                    ("0" + now.getMinutes()).slice(-2) + ":" + 
+                                    ("0" + now.getSeconds()).slice(-2);
+
+                    // สร้าง HTML ของความคิดเห็นใหม่
+                    newComment.innerHTML = `<strong>${name}</strong> (${timestamp}): <br> ${commentText}`;
+                    commentsDiv.insertBefore(newComment, commentsDiv.firstChild); // แทรกความคิดเห็นใหม่ที่ด้านบนสุดของรายการ
+
+                    // ล้างค่าข้อมูลในฟอร์ม
                     document.getElementById("name").value = '';
                     document.getElementById("comment").value = '';
 
-                    // โหลดความคิดเห็นใหม่หลังจากส่งสำเร็จ
-                    loadComments();
-                } else {
-                    alert('เกิดข้อผิดพลาด: ' + data.message);
+                } else { // กรณีเกิดข้อผิดพลาดจากเซิร์ฟเวอร์
+                    alert('เกิดข้อผิดพลาด: ' + data.message); // แจ้งเตือนข้อผิดพลาด
                 }
             })
-            .catch(error => {
-                console.error('Error:', error);
-                alert('เกิดข้อผิดพลาดในการส่งความคิดเห็น');
+            .catch(error => { // ดักจับข้อผิดพลาดจาก Fetch API
+                console.error('Error:', error); // แสดงข้อผิดพลาดในคอนโซล
+                alert('เกิดข้อผิดพลาดในการส่งความคิดเห็น'); // แจ้งเตือนผู้ใช้
             })
             .finally(() => {
-                // เปิดปุ่มอีกครั้ง
+                // เปิดปุ่มอีกครั้งเมื่อเสร็จสิ้น
                 submitButton.disabled = false;
             });
         });
-
-        // โหลดความคิดเห็นเมื่อเปิดหน้า
-        document.addEventListener("DOMContentLoaded", loadComments);
-    </script>
-</body>
-</html> -->
-
-
-
-<!DOCTYPE html>
-<html lang="th">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>แสดงความคิดเห็น</title>
-    <link rel="stylesheet" href="/Css/csstest.css">
-</head>
-
-<header>
-    <nav>
-        <a href="/home" class="nav-button"><h3>Back</h3></a>
-    </nav>
-</header>
-
-<body>
-    <form id="commentForm" action="/add-comment" method="post">
-        <div class="comment-box">
-            <h2>แสดงความคิดเห็น</h2>
-            <input type="text" name="user" id="name" placeholder="ชื่อของคุณ" required>
-            <textarea id="comment" name="comment" placeholder="พิมพ์ความคิดเห็นของคุณ..." required></textarea>
-            <button type="submit">ส่งความคิดเห็น</button>
-        </div>
-    </form>
-    
-    <div class="comments" id="comments">
-        <h3>ความคิดเห็นล่าสุด</h3>
-    </div>
-    
-    <script>
-        document.getElementById("comment").readOnly = false; // เปิดให้พิมพ์ได้
-        document.getElementById("commentForm").addEventListener("submit", function(event) {
-        event.preventDefault();  // ป้องกันการรีเฟรชหน้า
-
-    let name = document.getElementById("name").value;
-    let commentText = document.getElementById("comment").value;
-    let submitButton = document.querySelector("button[type='submit']");
-
-    // ตรวจสอบว่ามีข้อมูลหรือไม่
-    if (!name || !commentText) {
-        alert("กรุณากรอกชื่อและความคิดเห็น");
-        return;
-    }
-
-    // ปิดปุ่มชั่วคราวระหว่างส่ง
-    submitButton.disabled = true;
-        fetch('/add-comment', {
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ user: name, comment: commentText })
-        })
-        
-    .then(response => response.json())
-    .then(data => {
-        if (data.success) {
-            alert('ส่งความคิดเห็นสำเร็จ');
-
-            // อัปเดตหน้าเว็บทันทีโดยเพิ่มความคิดเห็นใหม่เข้าไปใน HTML
-                let commentsDiv = document.getElementById("comments");
-                let newComment = document.createElement("div");
-                newComment.classList.add("comment-item");
-
-            // ใส่เวลาปัจจุบัน
-                let now = new Date();
-                let timestamp = now.getFullYear() + "-" + 
-                                ("0" + (now.getMonth() + 1)).slice(-2) + "-" + 
-                                ("0" + now.getDate()).slice(-2) + " " + 
-                                ("0" + now.getHours()).slice(-2) + ":" + 
-                                ("0" + now.getMinutes()).slice(-2) + ":" + 
-                                ("0" + now.getSeconds()).slice(-2);
-
-            newComment.innerHTML = `<strong>${name}</strong> (${timestamp}): <br> ${commentText}`;
-            commentsDiv.insertBefore(newComment, commentsDiv.firstChild);
-
-            // ล้างค่าในฟอร์ม
-            document.getElementById("name").value = '';
-            document.getElementById("comment").value = '';
-
-        } else {
-            alert('เกิดข้อผิดพลาด: ' + data.message);
-        }
-    })
-        .catch(error => {
-            console.error('Error:', error);
-            alert('เกิดข้อผิดพลาดในการส่งความคิดเห็น');
-        })
-        .finally(() => {
-            // เปิดปุ่มอีกครั้ง
-            submitButton.disabled = false;
-        });
-    });
     </script>
 </body>
 </html>

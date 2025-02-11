@@ -3,42 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
-    <link rel="stylesheet" href="/Css/Login.css">
+    <title>Register</title> 
+    <link rel="stylesheet" href="/Css/Login.css"> 
 </head>
 
-<body>
-    <div class="login-container">
-        <div class="login-box">
-            <div class="logo">
-                <img src="https://www.up.ac.th/icon/up.png" alt="Logo">
+<body> <!-- เริ่มต้นส่วนเนื้อหาของหน้าเว็บ -->
+    
+    <div class="login-container"> <!-- ส่วนคอนเทนเนอร์หลักของฟอร์มสมัครสมาชิก -->
+        <div class="login-box"> <!-- กล่องที่ใช้เก็บเนื้อหาของฟอร์ม -->
+
+            <div class="logo"> <!-- ส่วนของโลโก้มหาวิทยาลัย -->
+                <img src="https://www.up.ac.th/icon/up.png" alt="Logo"> <!-- แสดงโลโก้ -->
             </div>
 
-            <h1 class="login-header">Sign Up</h1>
+            <h1 class="login-header">Sign Up</h1> <!-- หัวข้อหลักของหน้า (สมัครสมาชิก) -->
 
-            <form action="/Register" method="POST" class="login-form">
+            <!-- เริ่มต้นฟอร์มสมัครสมาชิก -->
+            <form action="/Register" method="POST" class="login-form"> <!-- ฟอร์มส่งข้อมูลไปยัง "/Register" ด้วยเมธอด POST -->
+                
+                <!-- ช่องกรอกชื่อผู้ใช้ -->
                 <div class="input-box">
                     <input type="text" name="username" class="input-field" placeholder="Username" autocomplete="off" required>
+                    <!-- input-field สำหรับกรอกชื่อผู้ใช้, ปิด auto-complete เพื่อความปลอดภัย, และกำหนดให้ต้องกรอกข้อมูล -->
                 </div>
 
+                <!-- ช่องกรอกอีเมล -->
                 <div class="input-box">
                     <input type="email" name="email" class="input-field" placeholder="E-mail" autocomplete="off" required>
+                    <!-- input-field สำหรับกรอกอีเมล, ปิด auto-complete และกำหนดให้ต้องกรอกข้อมูล -->
                 </div>
 
+                <!-- ช่องกรอกรหัสผ่าน -->
                 <div class="input-box">
                     <input type="password" name="password" class="input-field" placeholder="Password" autocomplete="off" required>
+                    <!-- input-field สำหรับกรอกรหัสผ่าน, ปิด auto-complete และกำหนดให้ต้องกรอกข้อมูล -->
                 </div>
 
+                <!-- ช่องยืนยันรหัสผ่าน -->
                 <div class="input-box">
                     <input type="password" name="confirm_password" class="input-field" placeholder="Confirm Password" autocomplete="off" required>
+                    <!-- input-field สำหรับยืนยันรหัสผ่าน, ปิด auto-complete และกำหนดให้ต้องกรอกข้อมูล -->
                 </div>
 
+                <!-- ปุ่มสมัครสมาชิก -->
                 <div class="input-submit">
-                    <button type="submit" class="submit-btn">Sign Up</button>
+                    <button type="submit" class="submit-btn">Sign Up</button> <!-- ปุ่มส่งข้อมูลฟอร์ม -->
                 </div>
-            </form>
 
-        </div>
-    </div>
-</body>
-</html>
+            </form> 
+
+        </div> 
+    </div> 
+
+</body> 
+</html> 
